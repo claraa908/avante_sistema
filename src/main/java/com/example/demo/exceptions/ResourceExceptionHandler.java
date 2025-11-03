@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class ResourceExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
@@ -40,21 +40,20 @@ public class ResourceExceptionHandler extends ResponseEntityExceptionHandler {
             HttpStatusCode status,
             WebRequest request) {
 
-        // Cria um mapa para armazenar os erros de campo (campo: mensagem)
-        Map<String, String> errors = new HashMap<>();
+        Map<String, String> validationErrors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage);
+            validationErrors.put(fieldName, errorMessage);
         });
 
         StandardError err = new StandardError(
                 System.currentTimeMillis(),
                 HttpStatus.BAD_REQUEST.value(), // 400
                 "Validation Error",
-                "Um ou mais campos falharam na validação.",
+                "Detalhes: " + validationErrors.toString(),
                 request.getDescription(false).replace("uri=", "")
         );
-        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
     }
 }

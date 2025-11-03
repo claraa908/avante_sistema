@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
-
 public class ProdutosRequestDTO {
     @NotBlank(message = "Nome do produto eh obrigatorio")
     @Schema(description = "Nome do produto", example = "Livro Dracula - Bram Stoker" )
@@ -25,8 +24,7 @@ public class ProdutosRequestDTO {
     @Schema(description = "ID da categoria à qual o produto pertence")
     private Long categoriaID;
 
-    public ProdutosRequestDTO() {
-    }
+    public ProdutosRequestDTO() {}
 
     public ProdutosRequestDTO(String nome, String descricao, BigDecimal preco, Long categoriaID) {
         this.nome = nome;

@@ -9,8 +9,7 @@ public class ProdutosResponseDTO {
     private BigDecimal preco;
     private CategoriasResponseDTO categoria;
 
-    public ProdutosResponseDTO() {
-    }
+    public ProdutosResponseDTO() {}
 
     public Long getId() {
         return id;

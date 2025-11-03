@@ -5,8 +5,7 @@ public class CategoriasResponseDTO {
     private String nome;
     private String descricao;
 
-    public CategoriasResponseDTO() {
-    }
+    public CategoriasResponseDTO() {}
 
     public Long getId() {
         return id;

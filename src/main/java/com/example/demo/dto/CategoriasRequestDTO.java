@@ -11,8 +11,7 @@ public class CategoriasRequestDTO {
     @Schema(description = "Descricao da categoria", example = "Livros classicos...")
     private String descricao;
 
-    public CategoriasRequestDTO() {
-    }
+    public CategoriasRequestDTO() {}
 
     public CategoriasRequestDTO(String nome, String descricao) {
         this.nome = nome;
