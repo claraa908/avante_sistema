@@ -7,8 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-@Mapper(componentModel = "spring", uses = CategoriaMapper.class)
-public interface ProdutoMapper {
+@Mapper(componentModel = "spring", uses = CategoriasMapper.class)
+public interface ProdutosMapper {
     @Mapping(target = "categoria", ignore = true)
     Produtos toEntity(ProdutosRequestDTO dto);
     ProdutosResponseDTO toResponseDTO(Produtos entity);
