@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Categorias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nome;
     @Column(columnDefinition = "TEXT")
     private String descricao;
@@ -17,13 +17,13 @@ public class Categorias {
     public Categorias() {
     }
 
-    public Categorias(int id, String nome, String descricao) {
+    public Categorias(Long id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -35,7 +35,7 @@ public class Categorias {
         return descricao;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

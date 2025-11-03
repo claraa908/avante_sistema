@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -9,18 +10,18 @@ import java.util.Objects;
 public class Produtos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nome;
     @Column(columnDefinition = "TEXT")
     private String descricao;
-    private double preco;
+    private BigDecimal preco;
     @ManyToOne
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categorias categoria;
 
     public Produtos() {}
 
-    public Produtos(int id, String nome, String descricao, double preco, Categorias categoria) {
+    public Produtos(Long id, String nome, String descricao, BigDecimal preco, Categorias categoria) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -28,7 +29,7 @@ public class Produtos {
         this.categoria = categoria;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -40,7 +41,7 @@ public class Produtos {
         return descricao;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
@@ -48,7 +49,7 @@ public class Produtos {
         return categoria;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,7 +61,7 @@ public class Produtos {
         this.descricao = descricao;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
