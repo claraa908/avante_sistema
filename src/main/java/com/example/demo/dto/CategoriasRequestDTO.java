@@ -4,11 +4,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 
 public class CategoriasRequestDTO {
-    @NotBlank(message = "Nome da categoria eh obrigatorio")
-    @Schema(description = "Nome da categoria", example = "Classico")
+    @NotBlank(message = "Nome da categoria é obrigatório")
+    @Schema(description = "Nome da categoria", example = "Clássico")
     private String nome;
 
-    @Schema(description = "Descricao da categoria", example = "Livros classicos...")
+    @Schema(description = "Descrição da categoria",
+            example = "Obras atemporais que moldaram a cultura e o pensamento, de autores essenciais " +
+                        "que todo leitor precisa conhecer.")
     private String descricao;
 
     public CategoriasRequestDTO() {}
