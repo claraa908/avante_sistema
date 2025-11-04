@@ -9,7 +9,7 @@ COPY src /app/src
 
 RUN mvn clean install -DskipTests
 
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 
 COPY --from=build /app/target/*.jar app.jar
 
