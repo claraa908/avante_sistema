@@ -120,7 +120,7 @@ POST /api/produtos
 
 ```http
 // REQUISIÇÃO
-PUT /api/livros/10
+PUT /api/produtos/10
 {
   "nome": "Duna: O Messias",
   "descricao": "Continuação da saga de Muad'Dib.",
@@ -141,11 +141,11 @@ PUT /api/livros/10
 }
 ```
 
-### 4. Buscar Livros com Filtro (`GET /api/livros?categoriaID=X`)
+### 4. Buscar Produto/Produtos com Filtro (`GET /api/produtos?categoriaID=X`)
 
 ```http
 // REQUISIÇÃO
-GET /api/livros?categoriaID=1
+GET /api/produtos?categoriaID=1
 
 // RESPOSTA (Status 200 OK)
 [
@@ -162,12 +162,11 @@ GET /api/livros?categoriaID=1
 ]
 ```
 
-### 5. Deletar Livro (`DELETE /api/livros/{id}`)
+### 5. Deletar Produto (`DELETE /api/produtos/{id}`)
 
 ```http
 // REQUISIÇÃO
-DELETE /api/livros/10
-Host: localhost:8080
+DELETE /api/produtos/10
 
 // RESPOSTA (Status 204 No Content)
 (Corpo vazio)
